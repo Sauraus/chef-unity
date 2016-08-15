@@ -1,0 +1,55 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 4096
+
+provisioner:
+  name: chef_zero
+  data_path: test/shared
+  require_chef_omnibus: 12.6.0
+
+platforms:
+  - name: macosx-10.11
+    driver:
+      provider: vmware_fusion
+      box: macosx-10.11
+      box_url: # Add your VMware bento box download URL here
+  - name: winsrv-2012R2
+    driver:
+      provider: vmware_fusion
+      box: winsrv-2012R2
+      box_url: # Add your VMware bento box download URL here
+  - name: centos-6.7
+  - name: ubuntu-14.04
+
+suites:
+  - name: editor
+    data_bags_path: 'test/integration/data_bags'
+    run_list:
+      - recipe[unity::editor]
+    includes:
+      - macosx-10.11
+      - winsrv-2012R2
+  - name: cache
+    run_list:
+      - recipe[unity::cache]
+    excludes:
+      - macosx-10.11
+      - winsrv-2012R2
+  - name: legacy-cache
+    run_list:
+      - recipe[unity::cache]
+    excludes:
+      - macosx-10.11
+      - winsrv-2012R2
+    attributes:
+      unity:
+        cache:
+          legacy: true
+  - name: cache-cluster
+    run_list:
+      - recipe[unity::cache-cluster]
+    excludes:
+      - macosx-10.11
+      - winsrv-2012R2

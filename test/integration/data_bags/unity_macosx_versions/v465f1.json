@@ -1,0 +1,7 @@
+{
+  "id": "v465f1",
+  "url": # ADD Unity editor installer location here,
+  "checksum": "b200ca4e30f5cf862f939c021a74d52665bf6d9c7109e97e27a095f6fc7389d7",
+  "app": "Unity",
+  "action": "uninstall"
+}

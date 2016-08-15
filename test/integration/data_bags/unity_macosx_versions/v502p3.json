@@ -1,0 +1,8 @@
+{
+  "id": "v502p3",
+  "url": # ADD Unity editor installer location here,
+  "checksum": "bd0c52b20a1e32926340fbd99c7328cbbc649345ebabe8524eee3298b2bfad15",
+  "app": "Unity-5.0.2p3",
+  "force": true,
+  "action": "uninstall"
+}

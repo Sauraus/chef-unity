@@ -1,0 +1,7 @@
+{
+  "id": "v465p4",
+  "url": # ADD Unity editor installer location here,
+  "checksum": "ab696f1d05f5413af89d18d54b3896dc61aa43223eea450d4c5ccc10a64b6e91",
+  "force" : true,
+  "action": "install"
+}
